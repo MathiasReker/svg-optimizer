@@ -316,6 +316,39 @@ final class ConvertColorsToHexTest extends TestCase
                 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="hsl(120, 100%, 50%)"/><circle cx="50" cy="50" r="40" stroke="hsla(240, 100%, 50%, 0.5)"/></svg>
                 XML,
         ];
+
+        yield 'Handles style attribute with RGB values' => [
+            <<<'XML'
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+                    <rect width="100" height="100" style="fill:rgb(255, 0, 0)"/>
+                </svg>
+                XML,
+            <<<'XML'
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" style="fill:#f00"/></svg>
+                XML,
+        ];
+
+        yield 'Handles style attribute with Hex color' => [
+            <<<'XML'
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+                    <rect width="100" height="100" style="fill:#FBB040"/>
+                </svg>
+                XML,
+            <<<'XML'
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" style="fill:#fbb040"/></svg>
+                XML,
+        ];
+
+        yield 'Ensures hex color is lowercase' => [
+            <<<'XML'
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+                    <rect width="100" height="100" fill="#FBB040"/>
+                </svg>
+                XML,
+            <<<'XML'
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="#fbb040"/></svg>
+                XML,
+        ];
     }
 
     /**
