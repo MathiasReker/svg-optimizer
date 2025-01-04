@@ -71,8 +71,25 @@ final readonly class RemoveUnnecessaryWhitespace implements SvgOptimizerRuleInte
     {
         $this->xmlProcessor->process(
             $domDocument,
-            fn (string $content): string => $this->removeStyleAttributeWhitespace($this->removeAttributeValueWhitespace($content))
+            fn (string $content): string => $this->removeWhitespaceBetweenTags(
+                $this->removeStyleAttributeWhitespace($this->removeAttributeValueWhitespace($content))
+            )
         );
+    }
+
+    /**
+     * Remove whitespace between tags in the SVG content.
+     *
+     * This method processes the SVG content to remove all whitespace between
+     * tags, which helps to compact the SVG file.
+     *
+     * @param string $content The SVG content to process
+     *
+     * @return string The processed SVG content with whitespace removed between tags
+     */
+    private function removeWhitespaceBetweenTags(string $content): string
+    {
+        return (string) preg_replace('/>\s+</', '><', $content);
     }
 
     /**
