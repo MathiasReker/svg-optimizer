@@ -38,6 +38,20 @@ final class MinifySvgCoordinates implements SvgOptimizerRuleInterface
     private const string TRAILING_DECIMAL_POINT_REGEX = '/(?<=\d)\.(?=\D|$)/';
 
     /**
+     * Regular expression pattern to remove the leading zero before a decimal point in numbers like 0.1.
+     *
+     * @see https://regex101.com/r/bLWJmu/1
+     */
+    private const string REMOVE_LEADING_ZERO_REGEX = '/(?<=^|\D)0(\.\d+)/';
+
+    /**
+     * Regular expression pattern to match zero values.
+     *
+     * @see https://regex101.com/r/3ejIEg/1
+     */
+    private const string ZERO_REGEX = '/^0(\.0+)?$/';
+
+    /**
      * Optimize the SVG document by minifying the coordinates of specific elements.
      *
      * This method processes the following elements and their attributes:
@@ -85,6 +99,7 @@ final class MinifySvgCoordinates implements SvgOptimizerRuleInterface
      * - Removes unnecessary trailing zeroes in decimal numbers.
      * - Removes unnecessary decimal points if there are no digits following them.
      * - Removes trailing decimal points if there are no digits following them.
+     * - Removes leading zero before the decimal point.
      *
      * @param string $value The value to minify
      *
@@ -96,10 +111,22 @@ final class MinifySvgCoordinates implements SvgOptimizerRuleInterface
             return $value;
         }
 
+        if (\in_array(preg_match(self::ZERO_REGEX, $value), [0, false], true)) {
+            $value = $this->removeLeadingZero($value);
+        }
+
         $value = $this->removeTrailingZeroes($value);
         $value = $this->removeUnnecessaryDecimalPoint($value);
 
         return $this->removeTrailingDecimalPoint($value);
+    }
+
+    /**
+     * Remove leading zero before a decimal point.
+     */
+    private function removeLeadingZero(string $value): string
+    {
+        return preg_replace(self::REMOVE_LEADING_ZERO_REGEX, '$1', $value) ?? $value;
     }
 
     /**

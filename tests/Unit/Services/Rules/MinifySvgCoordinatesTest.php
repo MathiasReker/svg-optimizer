@@ -84,7 +84,7 @@ final class MinifySvgCoordinatesTest extends TestCase
                 </svg>
                 XML,
             <<<'XML'
-                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect x="1000000" y="-0.0000001" width="0.000001" height="0.00000000001"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect x="1000000" y="-.0000001" width=".000001" height=".00000000001"/></svg>
                 XML,
         ];
 
@@ -161,7 +161,7 @@ final class MinifySvgCoordinatesTest extends TestCase
                 </svg>
                 XML,
             <<<'XML'
-                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="0.0000000001" cy="0.0000000001" r="0.0000000001"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx=".0000000001" cy=".0000000001" r=".0000000001"/></svg>
                 XML,
         ];
 
