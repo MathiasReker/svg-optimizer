@@ -23,8 +23,8 @@ final class FileProvider extends AbstractProvider
      *
      * @param string $inputFile The path to the input SVG file
      *
-     * @throws FileNotFoundException
-     * @throws IOException
+     * @throws FileNotFoundException If the file does not exist
+     * @throws IOException           If the file does not exist or cannot be read
      */
     public function __construct(private readonly string $inputFile)
     {
@@ -37,8 +37,8 @@ final class FileProvider extends AbstractProvider
     /**
      * Get the content of the input file.
      *
-     * @throws FileNotFoundException
-     * @throws IOException
+     * @throws FileNotFoundException If the file does not exist
+     * @throws IOException           If the file does not exist or cannot be read
      */
     #[\Override]
     public function getInputContent(): string
@@ -58,7 +58,7 @@ final class FileProvider extends AbstractProvider
     /**
      * Load the input file into a DOMDocument instance.
      *
-     * @throws XmlProcessingException
+     * @throws XmlProcessingException If the XML processing fails
      */
     #[\Override]
     public function loadContent(): \DOMDocument

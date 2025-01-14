@@ -225,7 +225,7 @@ final class SvgOptimizerCommand
      *
      * @param string $directoryPath The path to the directory containing the SVG files
      *
-     * @throws \UnexpectedValueException
+     * @throws \UnexpectedValueException If the directory path is invalid
      */
     private function processDirectory(string $directoryPath): void
     {

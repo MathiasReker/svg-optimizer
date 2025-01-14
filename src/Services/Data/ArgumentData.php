@@ -39,6 +39,9 @@ final class ArgumentData
      */
     private readonly array $examples;
 
+    /**
+     * Constructor for the ArgumentData class.
+     */
     public function __construct()
     {
         $this->options = [
@@ -143,7 +146,7 @@ final class ArgumentData
     /**
      * Retrieves a single option's details by its name.
      *
-     * @param string $option The name of the option (e.g., 'help', 'config').
+     * @param string $option The name of the option (e.g., 'help', 'config')
      *
      * @return ArgumentOptionValueObject|null Returns the option details or null if not found
      */

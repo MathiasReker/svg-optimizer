@@ -122,6 +122,15 @@ final class ConvertColorsToHex implements SvgOptimizerRuleInterface
         }
     }
 
+    /**
+     * Process color attributes in style values.
+     *
+     * This method processes the given style value to find and convert RGB colors to HEX format.
+     *
+     * @param string $styleValue The style value to process
+     *
+     * @return string The processed style value
+     */
     private function processColorAttributesInStyle(string $styleValue): string
     {
         foreach (self::COLOR_ATTRIBUTES as $attribute) {

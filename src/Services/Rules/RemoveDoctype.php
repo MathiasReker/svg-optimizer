@@ -28,8 +28,14 @@ final readonly class RemoveDoctype implements SvgOptimizerRuleInterface
      */
     private const string DOCTYPE_REGEX = '/<!DOCTYPE[^>]*>/i';
 
+    /**
+     * The XmlProcessor instance.
+     */
     private XmlProcessor $xmlProcessor;
 
+    /**
+     * Constructor for RemoveDoctype.
+     */
     public function __construct()
     {
         $this->xmlProcessor = new XmlProcessor();

@@ -17,8 +17,14 @@ use MathiasReker\PhpSvgOptimizer\Services\Validators\SvgValidator;
 
 readonly class XmlProcessor
 {
+    /**
+     * The SVG validator instance.
+     */
     private SvgValidator $svgValidator;
 
+    /**
+     * Constructor for the XmlProcessor class.
+     */
     public function __construct()
     {
         $this->svgValidator = new SvgValidator();

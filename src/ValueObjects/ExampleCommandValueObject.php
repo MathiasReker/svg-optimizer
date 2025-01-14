@@ -11,9 +11,6 @@ declare(strict_types=1);
 
 namespace MathiasReker\PhpSvgOptimizer\ValueObjects;
 
-/**
- * A value object that represents a collection of example commands.
- */
 final readonly class ExampleCommandValueObject
 {
     /**

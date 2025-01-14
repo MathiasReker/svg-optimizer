@@ -36,8 +36,14 @@ final readonly class ConvertEmptyTagsToSelfClosing implements SvgOptimizerRuleIn
      */
     private const string SELF_CLOSING_REGEX = '/<([a-zA-Z][a-zA-Z0-9-]*)([^>]*?)\s*\/>/';
 
+    /**
+     * The XmlProcessor instance.
+     */
     private XmlProcessor $xmlProcessor;
 
+    /**
+     * Constructor for ConvertEmptyTagsToSelfClosing.
+     */
     public function __construct()
     {
         $this->xmlProcessor = new XmlProcessor();

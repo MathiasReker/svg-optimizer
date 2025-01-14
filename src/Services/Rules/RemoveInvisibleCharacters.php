@@ -28,8 +28,14 @@ final readonly class RemoveInvisibleCharacters implements SvgOptimizerRuleInterf
      */
     private const string INVISIBLE_CHARACTERS_REGEX = '/&#x(?:200B|200C|200D|2028|2029|AD|0A|0D|09|D);/u';
 
+    /**
+     * The XmlProcessor instance.
+     */
     private XmlProcessor $xmlProcessor;
 
+    /**
+     * Constructor for RemoveInvisibleCharacters.
+     */
     public function __construct()
     {
         $this->xmlProcessor = new XmlProcessor();

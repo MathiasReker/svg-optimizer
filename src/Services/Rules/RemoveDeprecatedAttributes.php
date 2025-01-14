@@ -74,7 +74,7 @@ final class RemoveDeprecatedAttributes implements SvgOptimizerRuleInterface
     /**
      * Replaces specific attributes in the SVG document with their modern equivalents.
      *
-     * This function scans the document for the deprecated attributes listed in `$attributes`
+     * This method scans the document for the deprecated attributes listed in `$attributes`
      * and replaces them with the new names, but only if the new attribute's value is not
      * already set to the same value.
      *

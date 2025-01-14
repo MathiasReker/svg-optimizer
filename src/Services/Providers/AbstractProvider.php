@@ -59,7 +59,7 @@ abstract class AbstractProvider implements SvgProviderInterface
     /**
      * Optimize the provided DOMDocument instance.
      *
-     * @throws XmlProcessingException
+     * @throws XmlProcessingException If the XML processing fails
      */
     #[\Override]
     final public function optimize(\DOMDocument $domDocument): self
@@ -78,8 +78,8 @@ abstract class AbstractProvider implements SvgProviderInterface
     /**
      * Get metadata about the optimization.
      *
-     * @throws \InvalidArgumentException
-     * @throws \DivisionByZeroError
+     * @throws \InvalidArgumentException If the original size is less than or equal to 0
+     * @throws \DivisionByZeroError      If the original size is 0
      */
     #[\Override]
     final public function getMetaData(): MetaDataValueObject

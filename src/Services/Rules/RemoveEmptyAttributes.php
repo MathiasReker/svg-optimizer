@@ -34,8 +34,8 @@ final class RemoveEmptyAttributes implements SvgOptimizerRuleInterface
     /**
      * Removes attributes from the given DOMDocument that are empty or contain only whitespace.
      *
-     * This private method directly modifies the DOMDocument by iterating through all elements
-     * and removing attributes that either have an empty value or contain only whitespace characters.
+     * This method modifies the DOMDocument by iterating through all elements and removing
+     * attributes that either have an empty value or contain only whitespace characters.
      *
      * @param \DOMDocument $domDocument The DOMDocument object containing the SVG elements
      */

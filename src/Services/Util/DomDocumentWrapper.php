@@ -116,7 +116,7 @@ final class DomDocumentWrapper
     }
 
     /**
-     * Loads XML from a string into a DOMDocument, suppressing errors.
+     * Loads XML from a string into a DOMDocument.
      *
      * @param string $xmlContent The XML content as a string
      *

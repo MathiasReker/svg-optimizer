@@ -36,8 +36,7 @@ interface SvgProviderInterface
      * Optimizes the provided DOMDocument instance.
      *
      * This method performs optimization on the SVG content represented by the
-     * given DOMDocument instance. It may modify the instance in place or
-     * prepare it for further processing.
+     * given DOMDocument instance. It may modify the instance in place.
      *
      * @param \DOMDocument $domDocument The DOMDocument instance representing the SVG content to be optimized
      *

@@ -11,9 +11,6 @@ declare(strict_types=1);
 
 namespace MathiasReker\PhpSvgOptimizer\ValueObjects;
 
-/**
- * Represents metadata about SVG optimization, including sizes and savings.
- */
 final readonly class MetaDataValueObject
 {
     /**

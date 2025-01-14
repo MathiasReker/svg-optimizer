@@ -16,7 +16,7 @@ enum Command: string
     case PROCESS = 'process';
 
     /**
-     * Get the shorthand for the option.
+     * Get the title for the option.
      */
     public function getTitle(): string
     {

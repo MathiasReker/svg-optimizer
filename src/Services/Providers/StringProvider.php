@@ -29,7 +29,7 @@ final class StringProvider extends AbstractProvider
     /**
      * Load the input string into a DOMDocument instance.
      *
-     * @throws XmlProcessingException
+     * @throws XmlProcessingException If the input content is not valid XML
      */
     #[\Override]
     public function loadContent(): \DOMDocument

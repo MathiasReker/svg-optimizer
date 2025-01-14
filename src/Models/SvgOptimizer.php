@@ -65,7 +65,7 @@ final class SvgOptimizer
     /**
      * Optimize the SVG content by applying all added optimization rules.
      *
-     * @return SvgOptimizer The current instance of SvgOptimizer for method chaining
+     * @return $this The current instance of SvgOptimizer for method chaining
      *
      * @throws SvgValidationException If the SVG content is not valid
      */
