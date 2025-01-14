@@ -4218,12 +4218,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "7d89cc0cf2056a23d1cc4a419b936aeaeeb32fba"
+                "reference": "8beb7c1e57a70dfe6a45092dec599d6f30ff3e43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/7d89cc0cf2056a23d1cc4a419b936aeaeeb32fba",
-                "reference": "7d89cc0cf2056a23d1cc4a419b936aeaeeb32fba",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/8beb7c1e57a70dfe6a45092dec599d6f30ff3e43",
+                "reference": "8beb7c1e57a70dfe6a45092dec599d6f30ff3e43",
                 "shasum": ""
             },
             "require": {
@@ -4290,7 +4290,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-12-20T22:41:56+00:00"
+            "time": "2025-01-12T20:40:38+00:00"
         },
         {
             "name": "staabm/side-effects-detector",
@@ -5854,6 +5854,6 @@
         "ext-dom": "*",
         "ext-libxml": "*"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
